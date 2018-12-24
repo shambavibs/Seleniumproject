@@ -1,18 +1,20 @@
 package com.training.pom;
 
-
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
-public class Orderlinkpage {
+public class RTTC_017_return_delete_details {
 	private WebDriver driver;
-	public Orderlinkpage(WebDriver driver) {
+	public RTTC_017_return_delete_details(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}
@@ -20,34 +22,16 @@ public class Orderlinkpage {
 	private WebElement mo;
 	@FindBy(xpath="//i[@class='fa fa-trash-o']")
 	private WebElement deletereturn;
-	@FindBy(linkText="Orders")
-    private WebElement orders;
-	@FindBy(id="input-order-id")
-	private WebElement orderid;
-	@FindBy(id="button-filter")
-	private WebElement filter;
-	@FindBy(id="input-customer")
-	private WebElement customer;
 	@FindBy(linkText="Returns")
     private WebElement returns;
 	@FindBy(id="input-return-id")
 	private WebElement returnid;
-	@FindBy(xpath="//i[@class='fa fa-user fw']")
-	private WebElement mouseover;
 	@FindBy(linkText="Customers")
     private WebElement customers;
-	@FindBy(id="input-name")
-	private WebElement customername;
-	@FindBy(id="input-email")
-	private WebElement emailid;
 	@FindBy(name="selected[]")
 	private List <WebElement> checkbox;
-	@FindBy(id="button-delete")
-	private WebElement deleteorder;
-	public void clickondeletefororderid()
-	{
-		this.deleteorder.click();
-	}
+
+
 	public void clickondeleteforreturnid()
 	{
 		this.deletereturn.click();
@@ -57,6 +41,7 @@ public class Orderlinkpage {
 	Alert alert=driver.switchTo().alert();
 	alert.accept();
 	}	
+	
 	public void clickcheckbox()
 	{
 		boolean bvalue=false;
@@ -75,20 +60,7 @@ public class Orderlinkpage {
 		Actions action=new Actions(driver);
 		action.moveToElement(mo).build().perform();
 	}
-	public void clickonorderslink() {
-		this.orders.click();
-	}
-	public void sendorderid(String orderid) {
-		this.orderid.clear();
-		this.orderid.sendKeys(orderid);
-	}
-	public void clickonfilter() {
-		this.filter.click();
-	}
-	public void sendcustomername(String customer) {
-		this.customer.clear();
-		this.customer.sendKeys(customer);
-	}
+	
 	public void clickonreturns() {
 		this.returns.click();
 	}
@@ -96,23 +68,9 @@ public class Orderlinkpage {
 		this.returnid.clear();
 		this.returnid.sendKeys(orderid);
 	}
-	public void mouseoncustomericon()
-	{
-		Actions action=new Actions(driver);
-		action.moveToElement(mouseover).build().perform();
-	}
+	
 	public void clickoncustomerslink() {
 		this.customers.click(); 
 	}
 	
-	public void sendcustomersname(String customername) {
-		this.customername.clear();
-		this.customername.sendKeys(customername);
-	}
-
-	public void sendcustomeremailid(String emailid) {
-		this.emailid.clear();
-		this.emailid.sendKeys(emailid);
-	}
-
 }
