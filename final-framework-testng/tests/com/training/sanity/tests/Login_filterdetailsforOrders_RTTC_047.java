@@ -4,8 +4,11 @@ package com.training.sanity.tests;
 
 import java.io.FileInputStream;
 
+
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -47,37 +50,31 @@ public class Login_filterdetailsforOrders_RTTC_047 {
 		driver.get(baseUrl);
 	}
 	
-	@AfterMethod
+/*	@AfterMethod
 	public void tearDown() throws Exception {
 		Thread.sleep(1000);
 		driver.quit();
-	}
+	}*/
 	@Test
 	public void validLoginTest() throws InterruptedException {
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");		
 		loginPOM.clickLoginBtn(); 
 	    Thread.sleep(100);
-	   // screenShot.captureScreenShot("1");
 	    dashboard.mouseonsalesicon();
 	    dashboard.clickonorderslink();
-	//    screenShot.captureScreenShot("2");
-	    dashboard.sendorderid("76");
+	    dashboard.sendorderid("112");
 	    dashboard.clickonfilter();
 	    dashboard.selectorderstatus();
-	   
 	    dashboard.clickonfilter();
-	    dashboard.clickondateicon();
-	   
-	   dashboard.selectday();
-	   Thread.sleep(500);
-
-	//   dashboard.selectmonth();
-	//   Thread.sleep(500);
-	//   dashboard.selectyear();
-	//    screenShot.captureScreenShot("3");
-	  //  dashboard.sendcustomername("manzoor mehadi");
-	   // dashboard.clickonfilter();
+	    dashboard.startdate();
+	    dashboard.clickonfilter();
+	    dashboard.sendcustomername("shambavi bs");
+	    dashboard.clickonfilter();
+	    dashboard.sendtotal("1030");
+	    dashboard.clickonfilter();
+	    dashboard.enddate();
+	    dashboard.clickonfilter();
 	}   
 	
 	}

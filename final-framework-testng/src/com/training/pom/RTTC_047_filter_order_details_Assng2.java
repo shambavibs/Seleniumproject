@@ -1,7 +1,9 @@
 package com.training.pom;
 import static org.testng.Assert.assertNotNull;
 
-
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -31,43 +33,54 @@ public class RTTC_047_filter_order_details_Assng2 {
 	@FindBy(id="input-date-added")
 	private WebElement dateformat;
 	@FindBy(xpath="//i[@class='fa fa-calendar']")
-	private WebElement dateicon;
-	@FindBy(xpath="/html/body/div[3]/div/div[1]/table/thead/tr[1]/th[2]")
-	private WebElement month;
-	@FindBy(xpath="/html/body/div[3]/div/div[1]/table/tbody/tr[3]/td[3]")
-	private WebElement day;
-	@FindBy(xpath="/html/body/div[3]/div/div[3]/table/tbody/tr/td/span[10]")
-	private WebElement year;
-	@FindBy(className="datepicker")
-	private WebElement datepicker;
-	public String dot="2018-12-11";
-	public String dateArray[]=dot.split("-");
-	
-	
-	public String[] YYYY_MM_DD=null;
-
-	public void selectmonth()
-	{
-		Select month_dec=new Select(month);
-		month_dec.selectByValue("12");
-	}
-	public void selectday()
-	{
-		
-	}
-	public void selectyear()
-	{
-		
-		Select year_2018=new Select(year);
-		year_2018.selectByVisibleText("2018");
-	}
+	private WebElement dateicon1;
+	@FindBy(xpath="/html/body/div[2]/div/div[1]/table/tbody/tr[6]/td[2]")
+	private WebElement startdate;
+	@FindBy(xpath="//div[@class='col-sm-4']//div[2]//div[1]//span[1]//button[1]")
+	private WebElement enddate;
+	@FindBy(id="input-total")
+	private WebElement total;
 	@FindBy(id="input-customer")
 	private WebElement customer;
-
-	public void clickondateicon()
+	@FindBy(xpath="//i[@class='fa fa-calendar']")
+	//*[@id="content"]/div[2]/div/div[2]/div[1]/div/div[3]/div[2]/div/span
+	private WebElement dateicon2;
+	public void sendtotal(String tot)
 	{
-	this.dateicon.click();
+		this.total.sendKeys(tot);
 	}
+	
+	public void startdate()
+	{	 this.dateicon1.click();
+		//get todays date using calender utility
+		Calendar calender=Calendar.getInstance();
+		Date today=calender.getTime();
+		SimpleDateFormat smf=new SimpleDateFormat("YYYY-MM-DD");
+		String currentdate=smf.format(today);
+		Actions actions = new Actions(driver);
+		actions.moveToElement(startdate);
+		actions.click();
+		actions.sendKeys(currentdate);
+		actions.build().perform();
+
+		
+		
+	}
+	public void enddate()
+	{
+		this.enddate.click();
+			//get todays date using calender utility
+			Calendar calender=Calendar.getInstance();
+			Date today=calender.getTime();
+			SimpleDateFormat smf=new SimpleDateFormat("YYYY-MM-DD");
+			String currentdate=smf.format(today);
+			Actions actions = new Actions(driver);
+			actions.moveToElement(enddate);
+			actions.click();
+			actions.sendKeys(currentdate);
+			actions.build().perform();
+	}
+
 	public void Orderstatus()
 	{
 		orderstatus.click();

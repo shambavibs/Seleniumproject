@@ -8,7 +8,6 @@
           <include name="customersTest"/>
           <include name="setUpBeforeClass"/>
           <include name="setUp"/>
-          <include name="tearDown"/>
         </methods>
       </class> <!-- com.training.sanity.tests.RTTC_050_edit_add_customers -->
     </classes>

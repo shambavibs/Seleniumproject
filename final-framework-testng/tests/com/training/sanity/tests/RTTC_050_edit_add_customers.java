@@ -66,15 +66,15 @@ import org.openqa.selenium.WebDriver;
 		    dashboard.clickonaddress1();
 		    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		    Thread.sleep(10000);
-		    /*   dashboard.sendpostcode("8796545");
-		      dashboard.clickonrewardpoints();
+		     dashboard.sendpostcode("8796545");
+		    dashboard.clickonrewardpoints();
 		    Thread.sleep(1000);
 		    dashboard.senddescription("review");
 		    dashboard.sendpoints("50");
 		    dashboard.clickaddrewardpoints();
 		    Thread.sleep(1000);
 		    dashboard.clickonsave();
-		    Thread.sleep(1000);*/
+		    Thread.sleep(1000);
 		   
 		  
 		} 

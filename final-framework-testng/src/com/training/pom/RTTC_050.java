@@ -24,7 +24,8 @@ public class RTTC_050 {
 	private WebElement editbtn;
 	@FindBy(id="input-firstname")
 	private WebElement fname;
-	@FindBy(xpath="//i[@class='fa fa-minus-circle']")
+//	@FindBy(xpath="//i[@class='fa fa-minus-circle']")
+	@FindBy(linkText="Address 1")
 	private WebElement addr1;
 	@FindBy(id="input-postcode1")
 	private WebElement postcode;
@@ -34,7 +35,7 @@ public class RTTC_050 {
 	private WebElement description;
 	@FindBy(id="input-points")
 	private WebElement points;
-	@FindBy(xpath="//i[@class='fa fa-plus-circle']")
+	@FindBy(id="button-reward")
 	private WebElement addrewardpoints;
 	@FindBy(xpath="//i[@class='fa fa-save']")
 	private WebElement save;
