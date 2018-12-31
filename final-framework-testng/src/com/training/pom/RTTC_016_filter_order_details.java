@@ -21,8 +21,7 @@ public class RTTC_016_filter_order_details {
 	private WebElement filter;
 	@FindBy(id="input-customer")
 	private WebElement customer;
-
-
+	
 	public void mouseonsalesicon()
 	{
 		Actions action=new Actions(driver);

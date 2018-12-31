@@ -1,27 +1,30 @@
 package com.training.sanity.tests;
 
 	import java.io.FileInputStream;
+
 	import java.io.IOException;
 	import java.util.Properties;
-	import org.openqa.selenium.WebDriver;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
 	import org.testng.annotations.AfterMethod;
 	import org.testng.annotations.BeforeClass;
 	import org.testng.annotations.BeforeMethod;
 	import org.testng.annotations.Test;
 	import com.training.generics.ScreenShot;
-	import com.training.pom.RTTC_018_filter_Customer_details;
+	import com.training.pom.RTTC_050;
 	import com.training.pom.LoginPOM;
 	import com.training.utility.DriverFactory;
 	import com.training.utility.DriverNames;
 
-	public class LoginforCustomers_RTTC_020 {
+	public class RTTC_050_edit_add_customers {
 
 		private WebDriver driver;
 		private String baseUrl;
 		private LoginPOM loginPOM;
 		private static Properties properties;
 		private ScreenShot screenShot;
-		private RTTC_018_filter_Customer_details dashboard;
+		private RTTC_050 dashboard;
 
 
 		@BeforeClass
@@ -37,16 +40,16 @@ package com.training.sanity.tests;
 			loginPOM = new LoginPOM(driver); 
 			baseUrl = properties.getProperty("baseURL");
 			screenShot = new ScreenShot(driver); 
-			dashboard = new RTTC_018_filter_Customer_details(driver);
+			dashboard = new RTTC_050(driver);
 			// open the browser 
 			driver.get(baseUrl);
 		}
 		
-		@AfterMethod
+	/*	@AfterMethod
 		public void tearDown() throws Exception {
 			Thread.sleep(1000);
 			driver.quit();
-		}
+		}*/
 	  
 	
 		@Test
@@ -57,13 +60,22 @@ package com.training.sanity.tests;
 		    Thread.sleep(100);
 		    dashboard.mouseoncustomericon();
 		    dashboard.clickoncustomerslink();
-		    screenShot.captureScreenShot("8");
-		    dashboard.sendcustomersname("shambavi bs");
-		    dashboard.clickonfilter();
-		    screenShot.captureScreenShot("9");
-		    dashboard.sendcustomeremailid("mail2shambavi@gmail.com");
-		    dashboard.clickonfilter();
-		    screenShot.captureScreenShot("10");
+		    dashboard.clickonedit();
+		    Thread.sleep(1000);
+		    dashboard.sendfirstname("Asmita");
+		    dashboard.clickonaddress1();
+		    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		    Thread.sleep(10000);
+		    /*   dashboard.sendpostcode("8796545");
+		      dashboard.clickonrewardpoints();
+		    Thread.sleep(1000);
+		    dashboard.senddescription("review");
+		    dashboard.sendpoints("50");
+		    dashboard.clickaddrewardpoints();
+		    Thread.sleep(1000);
+		    dashboard.clickonsave();
+		    Thread.sleep(1000);*/
+		   
 		  
 		} 
 	}

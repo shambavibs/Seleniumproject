@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.Ordertodelete_RTTC_015">
+      <class name="com.training.sanity.tests.RTTC_050_edit_add_customers">
         <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
+          <include name="customersTest"/>
           <include name="setUpBeforeClass"/>
-          <include name="deleteorder"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.Ordertodelete_RTTC_015 -->
+      </class> <!-- com.training.sanity.tests.RTTC_050_edit_add_customers -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
