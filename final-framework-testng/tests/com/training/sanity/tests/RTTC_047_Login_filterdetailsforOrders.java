@@ -22,7 +22,7 @@ import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class Login_filterdetailsforOrders_RTTC_047 {
+public class RTTC_047_Login_filterdetailsforOrders {
 
 	private WebDriver driver;
 	private String baseUrl;

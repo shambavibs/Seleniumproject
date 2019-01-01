@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="30667" started-at="2018-12-31T04:02:56Z" finished-at="2018-12-31T04:03:27Z">
+  <suite name="Default suite" duration-ms="53523" started-at="2018-12-31T09:53:14Z" finished-at="2018-12-31T09:54:07Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="30667" started-at="2018-12-31T04:02:56Z" finished-at="2018-12-31T04:03:27Z">
+    <test name="Default test" duration-ms="53523" started-at="2018-12-31T09:53:14Z" finished-at="2018-12-31T09:54:07Z">
       <class name="com.training.sanity.tests.RTTC_050_edit_add_customers">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.RTTC_050_edit_add_customers@7823a2f9]" name="setUpBeforeClass" is-config="true" duration-ms="13" started-at="2018-12-31T09:32:56Z" finished-at="2018-12-31T09:32:56Z">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.RTTC_050_edit_add_customers@7823a2f9]" name="setUpBeforeClass" is-config="true" duration-ms="11" started-at="2018-12-31T15:23:14Z" finished-at="2018-12-31T15:23:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.RTTC_050_edit_add_customers@7823a2f9]" name="setUp" is-config="true" duration-ms="13319" started-at="2018-12-31T09:32:56Z" finished-at="2018-12-31T09:33:09Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.RTTC_050_edit_add_customers@7823a2f9]" name="setUp" is-config="true" duration-ms="20659" started-at="2018-12-31T15:23:14Z" finished-at="2018-12-31T15:23:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="customersTest()[pri:0, instance:com.training.sanity.tests.RTTC_050_edit_add_customers@7823a2f9]" name="customersTest" duration-ms="17310" started-at="2018-12-31T09:33:09Z" finished-at="2018-12-31T09:33:27Z">
+        <test-method status="PASS" signature="customersTest()[pri:0, instance:com.training.sanity.tests.RTTC_050_edit_add_customers@7823a2f9]" name="customersTest" duration-ms="32835" started-at="2018-12-31T15:23:35Z" finished-at="2018-12-31T15:24:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- customersTest -->

@@ -43,13 +43,12 @@ public class RTTC_047_filter_order_details_Assng2 {
 	@FindBy(id="input-customer")
 	private WebElement customer;
 	@FindBy(xpath="//i[@class='fa fa-calendar']")
-	//*[@id="content"]/div[2]/div/div[2]/div[1]/div/div[3]/div[2]/div/span
 	private WebElement dateicon2;
 	public void sendtotal(String tot)
 	{
 		this.total.sendKeys(tot);
 	}
-	
+	//
 	public void startdate()
 	{	 this.dateicon1.click();
 		//get todays date using calender utility
@@ -61,11 +60,9 @@ public class RTTC_047_filter_order_details_Assng2 {
 		actions.moveToElement(startdate);
 		actions.click();
 		actions.sendKeys(currentdate);
-		actions.build().perform();
-
-		
-		
+		actions.build().perform();	
 	}
+	//
 	public void enddate()
 	{
 		this.enddate.click();
@@ -80,31 +77,37 @@ public class RTTC_047_filter_order_details_Assng2 {
 			actions.sendKeys(currentdate);
 			actions.build().perform();
 	}
-
+	// To click on orderstatus
 	public void Orderstatus()
 	{
 		orderstatus.click();
 	}
+	//Selecting the orderstats
 	public void selectorderstatus()
 	{
 		Select order_status = new Select(orderstatus);
 		order_status.selectByVisibleText("Pending");
 	}
+	//To click on salesicon
 	public void mouseonsalesicon()
 	{
 		Actions action=new Actions(driver);
 		action.moveToElement(mo).build().perform();
 	}
+	//To click on orders link
 	public void clickonorderslink() {
 		this.orders.click();
 	}
+	//Entering orderid details
 	public void sendorderid(String orderid) {
 		this.orderid.clear();
 		this.orderid.sendKeys(orderid);
 	}
+	// Click on filter button
 	public void clickonfilter() {
 		this.filter.click();
 	}
+	// Pass the customer name
 	public void sendcustomername(String customer) {
 		this.customer.clear();
 		this.customer.sendKeys(customer);

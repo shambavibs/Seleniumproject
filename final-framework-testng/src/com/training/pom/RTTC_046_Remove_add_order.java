@@ -13,6 +13,7 @@ public class RTTC_046_Remove_add_order {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}
+
 	@FindBy(xpath="//i[@class='fa fa-shopping-cart fw']")
 	private WebElement mo;
 	@FindBy(linkText="Orders")
@@ -39,27 +40,32 @@ public class RTTC_046_Remove_add_order {
 	private WebElement continueshipping;
 	@FindBy(id="button-save")
 	private WebElement savebtn;
-	
+	//Method to click on salesicon 
 	public void mouseonsalesicon()
 	{
 		Actions action=new Actions(driver);
 		action.moveToElement(mo).build().perform();
 	}
+	//Method to click on orderslink
 	public void clickonorderslink() {
 		this.orders.click();
 	}
+	//Method to click on editbutton
 	public void clickoneditbutton()
 	{
 		this.editicon.click();
 	}
+	// Method to click on continue
 	public void clickoncontinue()
 	{
 		this.clickcontinue.click();
 	}
+	////Method to click on removeicon
 	public void clickonremoveicon()
 	{
 		this.clickremovebtn.click();
 	}
+	//Method to type prodctname
 	public void sendproductname()
 	{
 		
@@ -68,30 +74,35 @@ public class RTTC_046_Remove_add_order {
 		this.Lprod.click();
 
 	}
+	////Method to enter valid credentials in Quality text box
 	public void sendQuantity(String quantity)
 	{
 		this.quantity.clear();
 		this.quantity.sendKeys(quantity);
 		
 	}
+	//Method to click on add product
 	public void clickonaddproduct()
 	{
 		this.addprodbtn.click();
 		
 	}
+	// To click on continue
 	public void clickcontinue()
 	{
 		this.continuebtn.click();
 	}
+	//To click on continue of paymentpage
 	public void clickcontinueonpaymentpage()
 	{
 		this.continuepayment.click();
 	}
+	//To click on continue of shipping page
 	public void clickoncontinueshipping()
 	{
 		this.continueshipping.click();
 	}
-
+	// To click on save button
 	public void clickonsave()
 	{
 		this.savebtn.click();

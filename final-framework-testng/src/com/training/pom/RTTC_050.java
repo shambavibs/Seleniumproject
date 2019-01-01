@@ -15,7 +15,6 @@ public class RTTC_050 {
 
 	@FindBy(id="button-filter")
 	private WebElement filter;
-
 	@FindBy(xpath="//i[@class='fa fa-user fw']")
 	private WebElement mouseover;
 	@FindBy(linkText="Customers")
@@ -24,7 +23,6 @@ public class RTTC_050 {
 	private WebElement editbtn;
 	@FindBy(id="input-firstname")
 	private WebElement fname;
-//	@FindBy(xpath="//i[@class='fa fa-minus-circle']")
 	@FindBy(linkText="Address 1")
 	private WebElement addr1;
 	@FindBy(id="input-postcode1")
@@ -39,53 +37,66 @@ public class RTTC_050 {
 	private WebElement addrewardpoints;
 	@FindBy(xpath="//i[@class='fa fa-save']")
 	private WebElement save;
+	
+	
+	//To click on customer icon
 	public void mouseoncustomericon()
 	{
 		Actions action=new Actions(driver);
 		action.moveToElement(mouseover).build().perform();
 	}
+	//To click on customers link
 	public void clickoncustomerslink() {
 		this.customers.click(); 
 	}
+	//To click on edit button
 	public void clickonedit() {
 		// TODO Auto-generated method stub
 		this.editbtn.click();
 	}
+	//Enter name in firstname textbox
 	public void sendfirstname(String firstname) {
 		// TODO Auto-generated method stub
 		this.fname.clear();
 		this.fname.sendKeys(firstname);
 		
 	}
+	//To click on address1 tab
 	public void clickonaddress1() {
 		// TODO Auto-generated method stub
 		this.addr1.click();
 	}
+	//ENter the postal code value
 	public void sendpostcode(String pcode) {
 		// TODO Auto-generated method stub
 		this.postcode.clear();
 		this.postcode.sendKeys(pcode);
 	}
+	//To click on reward points
 	public void clickonrewardpoints() {
 		// TODO Auto-generated method stub
 		this.reward.click();
 		
 	}
+	//Enter review in description textbox
 	public void senddescription(String desc) {
 		// TODO Auto-generated method stub
 		this.description.clear();
 		this.description.sendKeys(desc);
 	}
+	//Enter valid points in points textbox
 	public void sendpoints(String poi) {
 		// TODO Auto-generated method stub
 		this.points.clear();
 		this.points.sendKeys(poi);
 		
 	}
+	//To click on add rewardpoints
 	public void clickaddrewardpoints() {
 		// TODO Auto-generated method stub
 		this.addrewardpoints.click();
 	}
+	//To click on save button
 	public void clickonsave() {
 		// TODO Auto-generated method stub
 		this.save.click();
