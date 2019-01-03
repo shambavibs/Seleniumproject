@@ -1,8 +1,9 @@
+/*Admin to filter the order details*/
 package com.training.sanity.tests;
 
 
-
 import java.io.FileInputStream;
+
 import java.io.IOException;
 import java.util.Properties;
 import org.openqa.selenium.WebDriver;
@@ -12,17 +13,19 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.training.generics.ScreenShot;
 
-import com.training.pom.RTTC_017_order_delete_details;
+import com.training.pom.RTTC_016_filter_order_details;
 import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
-public class Ordertodelete_RTTC_015 {
+
+public class LoginforOrders_RTTC_016 {
+
 	private WebDriver driver;
 	private String baseUrl;
 	private LoginPOM loginPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
-	private RTTC_017_order_delete_details dashboard;
+	private RTTC_016_filter_order_details dashboard;
 
 
 	@BeforeClass
@@ -38,7 +41,7 @@ public class Ordertodelete_RTTC_015 {
 		loginPOM = new LoginPOM(driver); 
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
-		dashboard = new RTTC_017_order_delete_details(driver);
+		dashboard = new RTTC_016_filter_order_details(driver);
 		// open the browser 
 		driver.get(baseUrl);
 	}
@@ -48,23 +51,22 @@ public class Ordertodelete_RTTC_015 {
 		Thread.sleep(1000);
 		driver.quit();
 	}
-	
 	@Test
-	public void deleteorder() throws InterruptedException {
+	public void validLoginTest() throws InterruptedException {
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");		
 		loginPOM.clickLoginBtn(); 
 	    Thread.sleep(100);
-	    screenShot.captureScreenShot("11");
-	    dashboard.mouseonsalesicon();
-	    dashboard.clickonorderslink();
-	    dashboard.clickcheckbox();
-	    screenShot.captureScreenShot("12");
-	    dashboard.clickondeletefororderid();
-	    screenShot.captureScreenShot("13");
-	    dashboard.alerttoaccept();
-	    screenShot.captureScreenShot("14");
-   }   
-
+	    screenShot.captureScreenShot("1");
+	    dashboard.mouseonsalesicon();// Click on sales icon
+	    dashboard.clickonorderslink();// Click on orders link
+	    screenShot.captureScreenShot("2");
+	    dashboard.sendorderid("76");// Send orderid
+	    dashboard.clickonfilter(); // Click on filter
+	    screenShot.captureScreenShot("3");
+	    dashboard.sendcustomername("manzoor mehadi");// Send customer name
+	    dashboard.clickonfilter();
+	}   
+	
 	}
 	 	

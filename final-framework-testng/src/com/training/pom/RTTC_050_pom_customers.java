@@ -6,9 +6,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class RTTC_050 {
+public class RTTC_050_pom_customers {
 	private WebDriver driver;
-	public RTTC_050(WebDriver driver) {
+	public RTTC_050_pom_customers(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}

@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-
 public class RTTC_046_Remove_add_order {
 	private WebDriver driver;
 	public RTTC_046_Remove_add_order(WebDriver driver) {
@@ -21,7 +19,7 @@ public class RTTC_046_Remove_add_order {
 	@FindBy(xpath="//i[@class='fa fa-pencil']")
 	private WebElement editicon;
 	@FindBy(id="button-customer")
-	private WebElement clickcontinue;
+	private WebElement ContinueButtonClick;
 	@FindBy(xpath="//i[@class='fa fa-minus-circle']")
 	private WebElement clickremovebtn;
 	@FindBy(id="input-product")
@@ -30,7 +28,7 @@ public class RTTC_046_Remove_add_order {
 	private WebElement quantity;
 	@FindBy(id="button-product-add")
 	private WebElement addprodbtn;
-	@FindBy(linkText="Lorem ipsum dolor sit amet")
+	@FindBy(linkText="Finger Ring")
 	private WebElement Lprod;
 	@FindBy(id="button-cart")
 	private WebElement continuebtn;
@@ -40,32 +38,32 @@ public class RTTC_046_Remove_add_order {
 	private WebElement continueshipping;
 	@FindBy(id="button-save")
 	private WebElement savebtn;
-	//Method to click on salesicon 
+// Click on Sales icon
 	public void mouseonsalesicon()
 	{
 		Actions action=new Actions(driver);
 		action.moveToElement(mo).build().perform();
 	}
-	//Method to click on orderslink
+	// Click on orders link
 	public void clickonorderslink() {
 		this.orders.click();
 	}
-	//Method to click on editbutton
+	// Click on edit button
 	public void clickoneditbutton()
 	{
 		this.editicon.click();
 	}
-	// Method to click on continue
-	public void clickoncontinue()
+	// click on continue button
+	public void ContinueClickButton()
 	{
-		this.clickcontinue.click();
+	this.ContinueButtonClick.click();
 	}
-	////Method to click on removeicon
+	// Click on remove icon
 	public void clickonremoveicon()
 	{
 		this.clickremovebtn.click();
 	}
-	//Method to type prodctname
+	// Send the product name
 	public void sendproductname()
 	{
 		
@@ -74,7 +72,7 @@ public class RTTC_046_Remove_add_order {
 		this.Lprod.click();
 
 	}
-	////Method to enter valid credentials in Quality text box
+	//Method to enter valid credentials in Quality text box
 	public void sendQuantity(String quantity)
 	{
 		this.quantity.clear();

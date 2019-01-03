@@ -1,3 +1,5 @@
+/*Admin to delete Returned product details from Product Return list*/
+
 package com.training.sanity.tests;
 
 	import java.io.FileInputStream;
@@ -10,19 +12,19 @@ package com.training.sanity.tests;
 	import org.testng.annotations.BeforeMethod;
 	import org.testng.annotations.Test;
 	import com.training.generics.ScreenShot;
-    import com.training.pom.RTTC_017_return_delete_details;
+    import com.training.pom.RTTC_019_return_delete_details;
     import com.training.pom.LoginPOM;
 	import com.training.utility.DriverFactory;
 	import com.training.utility.DriverNames;
 
-	public class Returnstodelete_RTTC_018 {
+	public class Returnstodelete_RTTC_019 {
 
 		private WebDriver driver;
 		private String baseUrl;
 		private LoginPOM loginPOM;
 		private static Properties properties;
 		private ScreenShot screenShot;
-		private RTTC_017_return_delete_details dashboard;
+		private RTTC_019_return_delete_details dashboard;
 
 
 		@BeforeClass
@@ -38,7 +40,7 @@ package com.training.sanity.tests;
 			loginPOM = new LoginPOM(driver); 
 			baseUrl = properties.getProperty("baseURL");
 			screenShot = new ScreenShot(driver); 
-			dashboard = new RTTC_017_return_delete_details(driver);
+			dashboard = new RTTC_019_return_delete_details(driver);
 			// open the browser 
 			driver.get(baseUrl);
 		}
@@ -55,15 +57,14 @@ package com.training.sanity.tests;
 			loginPOM.sendPassword("admin@123");		
 			loginPOM.clickLoginBtn(); 
 		    screenShot.captureScreenShot("15");
-		    dashboard.mouseonsalesicon();
-		    dashboard.clickonreturns();
-		    dashboard.clickcheckbox();
+		    dashboard.mouseonsalesicon();// Click on sales icon
+		    dashboard.clickonreturns();// Click on returns link
+		    dashboard.clickcheckbox();// click on checkbox to delete the specific return id
 		    Thread.sleep(400);
 		    screenShot.captureScreenShot("16");
-		    dashboard.clickondeleteforreturnid();
-		    Thread.sleep(400);
+		    dashboard.clickondeleteforreturnid();// Click on delete icon
 		    screenShot.captureScreenShot("17");
-		    dashboard.alerttoaccept();
+		    dashboard.alerttoaccept();// Clicking on ok to accept the altert
 		    screenShot.captureScreenShot("18");
 	   }  
 		}

@@ -43,7 +43,7 @@ public class RTTC_048_create_add_category {
 	private WebElement links;
 	@FindBy(id="input-category")
 	private WebElement lcategories;
-	@FindBy(linkText="COLLECTIONS")
+	@FindBy(linkText="ETHNIC")
 	private WebElement collections;
 	@FindBy(linkText="Attribute")
 	private WebElement attribute;

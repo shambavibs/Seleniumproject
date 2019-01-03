@@ -1,8 +1,10 @@
-
+/*Admin to change order placed by the customer*/
 package com.training.sanity.tests;
 
 
 import java.io.FileInputStream;
+
+
 
 import java.io.IOException;
 import java.util.Properties;
@@ -23,7 +25,7 @@ public class RTTC_046_change_order_placed_by_customer {
 	private String baseUrl;
 	private LoginPOM loginPOM;
 	private static Properties properties;
-	private ScreenShot screenShot;
+	//private ScreenShot screenShot;
 	private RTTC_046_Remove_add_order dashboard;
 
 
@@ -39,7 +41,7 @@ public class RTTC_046_change_order_placed_by_customer {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver); 
 		baseUrl = properties.getProperty("baseURL");
-		screenShot = new ScreenShot(driver); 
+		//screenShot = new ScreenShot(driver); 
 		dashboard = new RTTC_046_Remove_add_order(driver);
 		// open the browser 
 		driver.get(baseUrl);
@@ -59,25 +61,17 @@ public class RTTC_046_change_order_placed_by_customer {
 	    dashboard.mouseonsalesicon();
 	    dashboard.clickonorderslink();
 	    dashboard.clickoneditbutton();
-	    Thread.sleep(500);
-	    dashboard.clickoncontinue();
 	    Thread.sleep(1000);
+	    dashboard.ContinueClickButton();
 	    dashboard.clickonremoveicon();
-	    Thread.sleep(1000);
 	    dashboard.sendproductname();
-	    Thread.sleep(1000);
 	    dashboard.sendQuantity("1");
-	    Thread.sleep(1000);
 	    dashboard.clickonaddproduct();
-	    Thread.sleep(5000);
-	      dashboard.clickcontinue();
-	    Thread.sleep(1000);
-	   	   dashboard.clickcontinueonpaymentpage();
-	    Thread.sleep(1000);
+	    dashboard.clickcontinue();
+	    dashboard.clickcontinueonpaymentpage();
 	    dashboard.clickoncontinueshipping();
-	    Thread.sleep(1000);
 	    dashboard.clickonsave();
-	    Thread.sleep(1000);
+
 	}   
 	
 	}

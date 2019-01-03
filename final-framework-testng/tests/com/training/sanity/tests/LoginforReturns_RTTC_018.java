@@ -1,9 +1,7 @@
+/*Admin to filter the Product Return List details*/
+
 package com.training.sanity.tests;
-
-
-
 import java.io.FileInputStream;
-
 import java.io.IOException;
 import java.util.Properties;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +15,7 @@ import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class LoginforReturns_RTTC_017 {
+public class LoginforReturns_RTTC_018 {
 
 	private WebDriver driver;
 	private String baseUrl;
@@ -57,15 +55,13 @@ public class LoginforReturns_RTTC_017 {
 		loginPOM.sendPassword("admin@123");		
 		loginPOM.clickLoginBtn(); 
 	    Thread.sleep(100);
-	    dashboard.mouseonsalesicon();
-	    screenShot.captureScreenShot("4");
-	    dashboard.mouseonsalesicon();
+	    dashboard.mouseonsalesicon();// Click on Sales icon
 	    screenShot.captureScreenShot("5");
-	    dashboard.clickonreturns();
-	    dashboard.sendreturnid("76");
-	    dashboard.clickonfilter();
+	    dashboard.clickonreturns();// Click on Returns link
+	    dashboard.sendreturnid("76");// Send return id
+	    dashboard.clickonfilter();// Click on filter button
 	    screenShot.captureScreenShot("6");
-	    dashboard.sendcustomername("manzoor mehadi");
+	    dashboard.sendcustomername("manzoor mehadi");// Send the customer name
 	    dashboard.clickonfilter();
 	    screenShot.captureScreenShot("7");
 	}

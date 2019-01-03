@@ -1,9 +1,7 @@
+/*Admin to return product of customer & delete from return list*/
+
 package com.training.sanity.tests;
-
-
-
 import java.io.FileInputStream;
-
 import java.io.IOException;
 import java.util.Properties;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +10,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.training.generics.ScreenShot;
-import com.training.pom.RTTC_018_filter_Return_details;
 import com.training.pom.RTTC_049_pom_add_delete_returns;
 import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
@@ -67,15 +64,11 @@ public class RTTC_049_add_delete_returns {
 	    dashboard.sendlastname("Bose");
 	    dashboard.sendemail("sbose@abc.com");
 	    dashboard.sendphonenum("9876543210");
-	    Thread.sleep(800);
 	    dashboard.clickonproduct("Integer vitae iaculis massa");
 	    dashboard.clickonmodel("SKU-003");
 	    dashboard.clickonsave();
-	    Thread.sleep(1000);
 	    dashboard.clickcheckbox();
-	    Thread.sleep(1000);
 	    dashboard.clickondeleteforreturnid();
-	    Thread.sleep(1000);
 	    dashboard.alerttoaccept();
 	    
 	}

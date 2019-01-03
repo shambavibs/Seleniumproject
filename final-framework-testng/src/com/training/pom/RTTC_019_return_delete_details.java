@@ -12,9 +12,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class RTTC_017_return_delete_details {
+public class RTTC_019_return_delete_details {
 	private WebDriver driver;
-	public RTTC_017_return_delete_details(WebDriver driver) {
+	public RTTC_019_return_delete_details(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}
